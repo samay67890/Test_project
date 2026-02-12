@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuthenticAI — Deepfake Video Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/authenticai.css' %}">
+</head>
+<body>
+
+<nav>
+    <div class="nav-content">
+        <div class="logo">AuthenticAI</div>
+        <div class="nav-links">
+            <a href="#">Analysis</a>
+            <a href="#">Metadata</a>
+            <a href="#">Security</a>
+            <a href="#">API</a>
+        </div>
+    </div>
+</nav>
+
+<header>
+    <h1>Identify Reality.</h1>
+    <p class="subtitle">Advanced forensics to distinguish real video from AI synthesis.</p>
+    <a href="#upload" class="btn">Get Started</a>
+</header>
+
+<div class="tool-container" id="upload">
+    <!-- Drag & Drop Area -->
+    <div class="upload-zone" id="dropZone">
+        <span class="upload-icon">🎞️</span>
+        <h2 style="font-size: 24px; margin-bottom: 10px;">Upload a video to scan</h2>
+        <p style="color: var(--text-secondary);">Drag and drop MP4 or MOV files here</p>
+        
+        <div class="scanning-loader" id="loader">
+            <p>Analyzing facial metadata and pixel consistency...</p>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-card" id="results">
+        <div class="status-badge badge-ai" id="resultStatus">AI Generated (98% Certainty)</div>
+        <h2 style="font-size: 32px; margin-bottom: 8px;">Analysis Report</h2>
+        <p style="color: var(--text-secondary);">Video shows high probability of generative adversarial manipulation.</p>
+
+        <div class="analysis-grid">
+            <div class="metric">
+                <span style="font-size: 12px; color: var(--text-secondary); font-weight: 600;">Facial Consistency</span>
+                <p style="font-size: 20px; margin-top: 5px;" id="val1">Low (32%)</p>
+                <div class="progress-bar"><div class="progress-fill" id="bar1"></div></div>
+            </div>
+            <div class="metric">
+                <span style="font-size: 12px; color: var(--text-secondary); font-weight: 600;">C2PA Metadata</span>
+                <p style="font-size: 20px; margin-top: 5px;" id="val2">Synthetic</p>
+                <div class="progress-bar"><div class="progress-fill" id="bar2"></div></div>
+            </div>
+            <div class="metric">
+                <span style="font-size: 12px; color: var(--text-secondary); font-weight: 600;">Temporal Fluency</span>
+                <p style="font-size: 20px; margin-top: 5px;" id="val3">Inconsistent</p>
+                <div class="progress-bar"><div class="progress-fill" id="bar3"></div></div>
+            </div>
+            <div class="metric">
+                <span style="font-size: 12px; color: var(--text-secondary); font-weight: 600;">Overall Integrity</span>
+                <p style="font-size: 20px; margin-top: 5px;" id="val4">Compromised</p>
+                <div class="progress-bar"><div class="progress-fill" id="bar4"></div></div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px; text-align: right;">
+            <a href="#" class="btn" onclick="location.reload()">New Analysis</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div style="max-width: 1000px; margin: 0 auto;">
+        <p>Copyright © 2026 AuthenticAI Inc. All rights reserved.</p>
+        <p style="margin-top: 10px;">Privacy Policy &nbsp; | &nbsp; Terms of Service &nbsp; | &nbsp; Cookie Settings</p>
+    </div>
+</footer>
+
+<script src="{% static 'core/authenticai.js' %}"></script>
+</body>
+</html>
+
